@@ -1,0 +1,31 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getWriting, formatDate, readingTime, url } from '../../lib/writing';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  return (await getWriting()).map(entry => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+interface Props { entry: CollectionEntry<'writing'>; }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Base title={entry.data.title} description={`${entry.data.title} — an essay by ${site.name}.`} draft={entry.data.draft}>
+  <article class="article">
+    <a class="article-back" href={url('writing/')}><span aria-hidden="true">←</span> All writing</a>
+    <header class="article-header">
+      <p class="eyebrow">{entry.data.topics.join(' · ') || 'Essay'}</p>
+      <h1>{entry.data.title}</h1>
+      <div class="article-meta">
+        {!entry.data.draft && <><span>{site.name}</span><time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time></>}
+        {entry.data.draft && <span>Unpublished draft</span>}
+        <span>{readingTime(entry.body)} min read</span>
+      </div>
+    </header>
+    {entry.data.draft && <aside class="draft-notice"><strong>Local draft preview.</strong> This article is excluded from the production website.</aside>}
+    <div class="prose"><Content /></div>
+    <footer class="article-end"><a href={url('writing/')}><span aria-hidden="true">←</span> Back to writing</a></footer>
+  </article>
+</Base>

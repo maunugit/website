@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import WritingList from '../../components/WritingList.astro';
+import { getWriting } from '../../lib/writing';
+const entries = await getWriting();
+---
+<Base title="Writing" description="Occasional writing about software, AI agents, and cognition.">
+  <section class="section-content">
+    <header class="section-heading">
+      <h1>Writing</h1>
+      <p>Short essays about topics that either interest me or keep bothering me.</p>
+    </header>
+    <WritingList entries={entries} />
+  </section>
+</Base>

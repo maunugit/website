@@ -1,0 +1,25 @@
+---
+import Base from './Base.astro';
+import { projects } from '../data/site';
+import { url } from '../lib/writing';
+
+interface Props { frontmatter: { project: string }; }
+const project = projects.find(entry => entry.name === Astro.props.frontmatter.project);
+if (!project) throw new Error(`Unknown project: ${Astro.props.frontmatter.project}`);
+---
+<Base title={project.name} description={project.description}>
+  <article class="article project-note">
+    <a class="article-back" href={url('about/#coding')}>← All projects</a>
+    <header class="article-header">
+      <p class="eyebrow">Project notes</p>
+      <h1>{project.name}</h1>
+      <p class="project-description">{project.description}</p>
+      <div class="project-meta">
+        <span class="small-meta">{project.kind}</span>
+        {project.href && <a href={project.href}>Source on GitHub</a>}
+      </div>
+    </header>
+    <div class="prose"><slot /></div>
+    <footer class="article-end"><a href={url('about/#coding')}>← All projects</a></footer>
+  </article>
+</Base>

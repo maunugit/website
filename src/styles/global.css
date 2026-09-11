@@ -33,12 +33,14 @@ main:focus { outline: none; }
   padding-bottom: 20px;
   border-bottom: 1px solid var(--ink);
   view-transition-name: masthead;
+  text-align: center;
 }
 .is-home .site-header { margin-top: clamp(80px, 23svh, 220px); }
+.is-home .home-note { margin-inline: auto; text-align: center; }
 .site-name { font-family: var(--mono); font-size: clamp(1.65rem, 5.5vw, 2.5rem); line-height: 1.25; font-weight: 500; letter-spacing: -.055em; overflow-wrap: anywhere; }
 .site-name a { text-decoration: none; }
 .site-description { color: var(--muted); font-family: var(--mono); font-size: .8125rem; margin-top: 12px; }
-.site-header nav { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 27px; font-family: var(--mono); font-size: .9375rem; }
+.site-header nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 26px; margin-top: 27px; font-family: var(--mono); font-size: .9375rem; }
 .site-header nav a { padding: 3px 0; text-decoration: none; }
 .site-header nav a:hover, .site-header nav a[aria-current] { text-decoration: underline; text-underline-offset: 6px; }
 .site-header nav a[aria-current] { font-weight: 700; }
@@ -54,7 +56,7 @@ main:focus { outline: none; }
 .entry-meta { font-family: var(--mono); font-size: .75rem; color: var(--muted); padding-top: 3px; display: flex; flex-direction: column; gap: 3px; }
 .entry-content h2 { font-size: 1.0625rem; line-height: 1.5; font-weight: 600; }
 .empty-writing { color: var(--muted); }
-.about-content { max-width: 650px; }
+.coding-content { max-width: 650px; }
 .coding { margin-top: 36px; padding-top: 26px; border-top: 1px solid var(--line); }
 .project-list { list-style: none; padding: 0; margin: 20px 0 0; }
 .project-list li + li { margin-top: 23px; padding-top: 23px; border-top: 1px solid var(--line); }

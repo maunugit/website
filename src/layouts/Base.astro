@@ -6,7 +6,7 @@ interface Props { title?: string; description?: string; draft?: boolean; home?: 
 const { title, description = site.introduction, draft = false, home = false } = Astro.props;
 const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — Notes on software & AI`;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
-const nav = [{ label: 'Home', path: '' }, { label: 'Writing', path: 'writing/' }, { label: 'About / Coding', path: 'about/' }];
+const nav = [{ label: 'Home', path: '' }, { label: 'Writing', path: 'writing/' }, { label: 'Coding', path: 'coding/' }];
 ---
 <!doctype html>
 <html lang="en">
@@ -32,7 +32,7 @@ const nav = [{ label: 'Home', path: '' }, { label: 'Writing', path: 'writing/' }
         <p class="site-description">{site.description}</p>
         <nav aria-label="Main navigation">
           {nav.map(({ label, path }) => {
-            const active = path ? Astro.url.pathname.startsWith(url(path)) || (path === 'about/' && Astro.url.pathname.startsWith(url('coding/'))) : Astro.url.pathname === url();
+            const active = path ? Astro.url.pathname.startsWith(url(path)) : Astro.url.pathname === url();
             return <a href={url(path)} aria-current={active ? 'page' : undefined}>{label}</a>;
           })}
         </nav>

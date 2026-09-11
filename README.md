@@ -2,7 +2,7 @@
 
 A minimal Astro site for occasional essays and selected projects. Static HTML and CSS, system fonts, no React, CMS, database, analytics, or client JavaScript.
 
-The home screen uses a large name header with Home, Writing, and About / Coding links. The header moves upward as you open a section, using native cross-document CSS view transitions. Browsers without support use normal page navigation; reduced-motion preferences disable the animation. Coding projects and profile links live on the About page.
+The home screen uses a large name header with Home, Writing, and Coding links. The header moves upward as you open a section, using native cross-document CSS view transitions. Browsers without support use normal page navigation; reduced-motion preferences disable the animation. Coding projects and profile links live on the Coding page.
 
 ## Develop
 
@@ -18,7 +18,7 @@ Open the local URL printed by Astro. Development includes drafts, clearly labele
 ## Personalize
 
 - `src/data/site.ts`: name, introduction, social links, projects. Only add real destinations.
-- `src/pages/about.astro`: biography and interests.
+- `src/pages/coding/index.astro`: coding introduction and project list. The old `/about/` route redirects here.
 - `src/styles/global.css`: layout, spacing, colors, navigation, and page transitions.
 - `src/styles/prose.css`: article typography.
 - `public/favicon.svg`: small site icon.
@@ -79,7 +79,7 @@ src/
   data/site.ts      Personal details and project links
   layouts/          Shared page shell
   lib/              Content, URL, and date helpers
-  pages/            Home, about, writing index, article routes, 404
+  pages/            Home, coding, writing index, article routes, 404
   styles/           Site and article styles
 templates/          Blank essay template (not published)
 public/             Static assets

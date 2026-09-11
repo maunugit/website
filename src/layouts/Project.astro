@@ -9,7 +9,7 @@ if (!project) throw new Error(`Unknown project: ${Astro.props.frontmatter.projec
 ---
 <Base title={project.name} description={project.description}>
   <article class="article project-note">
-    <a class="article-back" href={url('about/#coding')}>← All projects</a>
+    <a class="article-back" href={url('coding/#coding')}>← All projects</a>
     <header class="article-header">
       <p class="eyebrow">Project notes</p>
       <h1>{project.name}</h1>
@@ -20,6 +20,6 @@ if (!project) throw new Error(`Unknown project: ${Astro.props.frontmatter.projec
       </div>
     </header>
     <div class="prose"><slot /></div>
-    <footer class="article-end"><a href={url('about/#coding')}>← All projects</a></footer>
+    <footer class="article-end"><a href={url('coding/#coding')}>← All projects</a></footer>
   </article>
 </Base>

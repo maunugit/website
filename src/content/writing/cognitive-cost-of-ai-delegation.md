@@ -1,7 +1,7 @@
 ---
 title: "Agentic emails and the cost of delegation"
 date: 2026-09-09
-topics: ["AI-assisted work", "Cognition"]
+# topics: ["AI-assisted work", "Cognition"]
 draft: false
 ---
 

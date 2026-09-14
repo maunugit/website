@@ -18,4 +18,5 @@
 .prose table { display: block; overflow-x: auto; border-collapse: collapse; font-size: .9375rem; }
 .prose th, .prose td { text-align: left; padding: 8px 15px; border: 1px solid var(--line); }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.prose .katex-display { overflow-x: auto; overflow-y: hidden; padding: .2em 0; }
 .article-end { margin-top: 52px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .875rem; }

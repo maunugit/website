@@ -1,5 +1,9 @@
 # Personal notebook
 
+Maunu Aunesluoma’s personal homepage, public technical notebook, and collection of personal, research, and work-related coding projects. Writing explores LLMs, AI agents, security, cognition, AI-assisted work, software engineering, and related systems or philosophical questions. Ideas begin privately in Obsidian and become occasional essays when worth sharing; there is no publishing schedule.
+
+For agent collaboration, start with [AGENTS.md](AGENTS.md), which records the editorial preferences and development conventions.
+
 A minimal Astro site for occasional essays and selected projects. Static HTML and CSS, system fonts, no React, CMS, database, analytics, or client JavaScript.
 
 The home screen uses a large name header with Home, Writing, and Coding links. The header moves upward as you open a section, using native cross-document CSS view transitions. Browsers without support use normal page navigation; reduced-motion preferences disable the animation. Coding projects and profile links live on the Coding page.
@@ -47,9 +51,21 @@ Keep your Obsidian vault outside this repository. Copy only articles intended fo
 
 Dates are publication labels, not scheduling controls. A `draft: false` article is included regardless of its date. Missing `draft` defaults to `true`.
 
-The included draft outlines are AI-written layout samples based on the initial brief, not finished essays or claims of authorship. Replace or delete them before publishing your own writing. With no published essays, production shows an intentional empty state.
+The remaining sample drafts (`prompt-injection-is-an-authority-problem.md` and `natural-language-and-structured-intent.md`) are AI-written layout outlines based on the initial brief, not finished essays or claims of authorship. Other articles contain Maunu’s own evolving writing; do not mistake them for disposable starter content. Replace or delete them before publishing your own writing. With no published essays, production shows an intentional empty state.
 
 Standard Markdown headings, links, footnotes, lists, quotes, tables, and fenced code blocks work. Convert Obsidian `[[wikilinks]]` and `![[embeds]]` to ordinary Markdown before copying. Store article images next to the Markdown and reference them relatively (for example `![Description](./image.png)`). For links between articles, use relative URL paths such as `../another-article/` to preserve GitHub Pages subpath support.
+
+### Math expressions
+
+Use `$2^4 = 16$` for inline math. For a separate equation, put double dollar signs on their own lines:
+
+```markdown
+$$
+\text{Memory (bytes)} = \frac{N \times b}{8}
+$$
+```
+
+Use braces for grouped exponents (`$10^{12}$`), underscores for subscripts (`$W_0$`), and `\$` for a literal dollar sign. Math is rendered at build time with KaTeX; no browser JavaScript is required.
 
 ## GitHub Pages
 
@@ -59,7 +75,7 @@ The workflow in `.github/workflows/deploy.yml` builds and deploys on pushes to `
 2. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source.
 3. Run **Deploy to GitHub Pages** from Actions, or push a new commit.
 
-The repository is not connected or deployed yet. For free hosting on a GitHub Free account, use a public repository. Consult [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) for plan availability and [Astro’s deployment guide](https://docs.astro.build/en/guides/deploy/github/) for the underlying workflow.
+The site is deployed at [maunugit.github.io/website](https://maunugit.github.io/website/) from [maunugit/website](https://github.com/maunugit/website). Pages is already configured to use GitHub Actions. Future updates go live after committing and pushing to `main`; the steps above describe initial setup for another repository. For free hosting on a GitHub Free account, use a public repository. Consult [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) for plan availability and [Astro’s deployment guide](https://docs.astro.build/en/guides/deploy/github/) for the underlying workflow.
 
 To check a project subpath locally:
 

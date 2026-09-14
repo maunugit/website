@@ -1,10 +1,14 @@
 ---
-title: "Prompt injection is an authority problem"
+title: "Prompt injections"
 description: "What changes when we treat prompt injection as a question of who gets to instruct an agent?"
 date: 2026-09-10
 topics: ["Agent security", "Systems"]
 draft: true
 ---
+
+
+
+
 
 *This is an AI-written outline for previewing the site, based on the initial project brief. It is not a finished essay.*
 

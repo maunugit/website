@@ -10,7 +10,7 @@ const { entries } = Astro.props;
       <li>
         <div class="entry-meta">
           {entry.data.draft ? <span>draft</span> : <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>}
-          <span>{readingTime(entry.body)} min</span>
+          <span>{readingTime(entry.body)} min read</span>
         </div>
         <div class="entry-content">
           <h2><a href={url(`writing/${entry.id}/`)}>{entry.data.title}</a></h2>

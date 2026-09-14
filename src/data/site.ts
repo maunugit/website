@@ -55,5 +55,6 @@ export const projects: Project[] = [
     name: 'This website',
     description: 'A small, static home for writing and things I build.',
     kind: 'Personal · Astro',
+    href: 'https://github.com/maunugit/website',
   },
 ];

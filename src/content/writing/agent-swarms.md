@@ -4,7 +4,7 @@ date: 2026-09-14
 # topics: ["AI-assisted work", "Cognition"]
 draft: false
 ---
-Lately there has been lots of news and quite sensationalist headlines about AI agents going rogue around the internet. I've been reading about agents hacking into websites and systems, escaping restrictions, developing new unforeseen objectives, and so on. But what exactly has been happening?
+Lately there have been lots of news and quite sensationalist headlines about AI agents going rogue around the internet. I've been reading about agents hacking into websites and systems, escaping restrictions, developing new unforeseen objectives, and so on. But what exactly has been happening?
 
 The three major ones that I will cover here were:
 1. Hugging Face incident, July 2026

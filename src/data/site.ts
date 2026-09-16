@@ -9,11 +9,21 @@ export interface Project {
   name: string;
   description: string;
   href?: string;
+  demo?: string;
+  preview?: string;
   page?: string;
   kind: string;
 }
 
 export const projects: Project[] = [
+  {
+    name: 'MaunuType',
+    description: 'A minimal typing test with timed words, literary quotes, and speed and accuracy results.',
+    href: 'https://github.com/maunugit/maunutype',
+    demo: 'https://maunugit.github.io/maunutype/',
+    preview: 'images/maunutype.png',
+    kind: 'Personal · React · TypeScript',
+  },
   {
     name: 'constrained_decoding',
     description: 'Master’s thesis experiments on constrained decoding: separating valid model output from good decisions in deterministic text environments.',
@@ -32,12 +42,6 @@ export const projects: Project[] = [
     description: 'An LLM-driven text editor with bounded editing tools and structured change reports, built by UEF for ThingLink’s Scenario Builder pipeline.',
     href: 'https://github.com/maunugit/agentic_editor',
     kind: 'UEF / ThingLink · Python',
-  },
-  {
-    name: 'maunutype',
-    description: 'A minimal typing test application.',
-    href: 'https://github.com/maunugit/maunutype',
-    kind: 'JavaScript',
   },
   {
     name: 'video_segmentator',

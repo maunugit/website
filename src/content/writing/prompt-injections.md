@@ -6,7 +6,18 @@ topics: ["Agent security", "Systems"]
 draft: true
 ---
 
+Agents encounter language from many sources, but language itself does not carry reliable proof of authority. What could that proof be?
 
+A prompt injection happens when an AI system encounters instructions from some untrusted source, and starts treating them as if they were a part of the original task it was given. For example, an agent tasked with summarizing an email might find a hidden instruction inside that tells the agent to forward private user information somewhere else. The term "prompt injection" is similar to SQL injections. In both cases, the problem refers to a system interpreting something as a command rather than just another part of data. SQL injections can be prevented quite well simply by structurally separating data queries from their parameters. The difficulty with prompt injections is that the LLM receives both instructions and data as natural language, where there isn't a clear boundary between them.
+
+It is also useful to separate indirect prompt injections from direct ones. A direct prompt injection comes from the user interacting with the model, essentially trying to "jailbreak" it, by tricking it to answer outside the models safeguards for example. An indirect prompt injection is instead planted in something the model eventually reads, like an email, webpage, document, tool call result, or even an image. This article will mostly revolve around indirect prompt injections, since I consider them more interesting and important than jailbreaking.
+
+In 2023, Simon Willison wrote about prompt injections in his webblog, and proposed a mechanism for dealing with this. He wrote about [a dual LLM pattern](https://simonwillison.net/2023/Apr/25/dual-llm-pattern/) that consists of two models and a programmed controller component. The models are a Privileged LLM and a Quarantined LLM, or P-LLM and Q-LLM for short. The P-LLM has access to tools and can execute commands, while the Q-LLM is only used to extract data from sources, but has no ability to do anything with it except to pass the results forward to the controller and the P-LLM. The central idea is that all untrusted data is always given to the Q-LLM that cannot run any commands or perform any actions, no matter how well the data has been injected with malicious information. 
+
+
+- summer intern also usually does a good job but sometimes also deletes the company's database
+- couldnt you just use "inside" and "outside" data? But is that a written label or some actualy boundary enforced by software?
+- what about a more sophisticated injection? like a plausible step inside a sequence? bob email example here.
 
 
 

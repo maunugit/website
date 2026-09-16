@@ -16,12 +16,16 @@ import { url } from '../../lib/writing';
       <h2 id="coding-heading">Projects</h2>
       <ul class="project-list">
         {projects.map(project => <li>
-          <h3>{project.page ? <a href={url(project.page)}>{project.name}</a> : project.href ? <a href={project.href.startsWith('/') ? url(project.href) : project.href}>{project.name}</a> : project.name}</h3>
+          <div class="project-heading">
+            <h3>{project.demo ? <a href={project.demo}>{project.name}</a> : project.page ? <a href={url(project.page)}>{project.name}</a> : project.href ? <a href={project.href.startsWith('/') ? url(project.href) : project.href}>{project.name}</a> : project.name}</h3>
+            {project.preview && <img class="project-preview" src={url(project.preview)} alt={`${project.name} typing test with a literary quote`} width="2602" height="1648" />}
+          </div>
           <p>{project.description}</p>
           <div class="project-meta">
-            <span class="small-meta">{project.kind}</span>
+            {project.demo && <a class="project-demo" href={project.demo} aria-label={`Try ${project.name}`}>Try it →</a>}
             {project.page && <a href={url(project.page)}>Project notes</a>}
             {project.href && <a href={project.href.startsWith('/') ? url(project.href) : project.href} aria-label={`${project.name} on GitHub`}>GitHub</a>}
+            <span class="small-meta">{project.kind}</span>
           </div>
         </li>)}
       </ul>

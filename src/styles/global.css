@@ -65,6 +65,14 @@ main:focus { outline: none; }
 .small-meta { color: var(--muted); font-family: var(--mono); font-size: .75rem; }
 .project-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 18px; margin-top: 10px; }
 .project-meta a { font-family: var(--mono); font-size: .875rem; }
+.project-meta .project-demo { display: inline-block; padding: 5px 12px; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; border: 1px solid var(--ink); }
+.project-meta .project-demo:hover { background: var(--paper); color: var(--ink); }
+.project-heading { width: fit-content; max-width: 100%; }
+.project-preview { display: none; width: min(360px, 100%); height: auto; margin-block: 12px; border: 1px solid var(--line); }
+.project-heading:focus-within .project-preview { display: block; }
+@media (hover: hover) {
+  .project-heading:hover .project-preview { display: block; }
+}
 .project-note .article-header h1 { overflow-wrap: anywhere; }
 .project-description { margin-bottom: 16px; color: var(--muted); font-size: 1.0625rem; }
 .elsewhere { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 30px; font-family: var(--mono); font-size: .875rem; }

@@ -35,6 +35,9 @@ The `projects` array in `src/data/site.ts` is a manually curated list, initially
 
 A project can also have a `page` such as `coding/llm-lab/`. Its title and **Project notes** link then open a local page while **GitHub** still goes directly to the repository. Omit `page` for projects that only need an external link.
 
+Add a `demo` URL to show a separate **Try it →** link in the Coding list. MaunuType uses this to open its independently deployed GitHub Pages app as a full page.
+Projects with a `demo` also link their title directly to the app. An optional `preview` public asset path shows a screenshot below the title on hover or keyboard focus.
+
 For another notes page, copy `src/pages/coding/llm-lab.md`, change the filename, and set its frontmatter `project` to the exact matching `name` in the projects array. The shared `Project.astro` layout reads the title, description, and links from that entry. Project notes are published with the site; unlike the writing collection, they do not have draft filtering.
 
 The initial notes and project descriptions were prepared from public repository descriptions and READMEs for review. Add your own role, motivations, and observations as you refine them. Source links open GitHub; no repository contents are mirrored locally.
